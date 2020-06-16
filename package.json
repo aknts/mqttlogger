@@ -1,0 +1,19 @@
+{
+  "name": "mqttlogger",
+  "version": "1.0.0",
+  "description": "Just a log script",
+  "main": "logger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aknts/mqttlogger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aknts/mqttlogger/issues"
+  },
+  "homepage": "https://github.com/aknts/mqttlogger#readme"
+}
