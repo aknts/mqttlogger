@@ -1,3 +1,4 @@
+// Converted to using mqttmod to dump message to an mqtt topic and at console.
 module.exports = function (broker, logtopic, mqttmod, callback){
 	var module = {};
 	module.log = function(level, message, broker, logtopic, mqttmod, callback){
