@@ -1,17 +1,19 @@
-module.exports = {
-	log: function(level, message){
+module.exports = function (broker, logtopic, mqttmod, callback){
+	var module = {};
+	module.log = function(level, message, broker, logtopic, mqttmod, callback){
+		console.log(mqttmod);
+		var msg = '['+(new Date())+'] [' + level + '] ['+ message + ']';
+		mqttmod.send(broker, logtopic, msg, callback);
 		console.log('['+(new Date())+'] [' + level + '] ['+ message + ']');
-	},
-	error: function(message){
-		this.log('ERROR', message);
-	},
-	info: function(message){
-		this.log('INFO', message);
-	},
-	debug: function(message){
-		this.log('DEBUG', message);
-	},
-	blank: function(message){
-		console.log(message);
-	},	
+	}
+	module.error = function(message){
+		this.log('ERROR', message, broker, logtopic, mqttmod, callback);
+	}
+	module.info = function(message){
+		this.log('INFO', message, broker, logtopic, mqttmod, callback);
+	}
+	module.debug = function(message){
+		this.log('DEBUG', message, broker, logtopic, mqttmod, callback);
+	}
+	return module;
 };
