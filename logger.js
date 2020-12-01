@@ -2,7 +2,6 @@
 module.exports = function (broker, logtopic, mqttmod, callback){
 	var module = {};
 	module.log = function(level, message, broker, logtopic, mqttmod, callback){
-		console.log(mqttmod);
 		var msg = '['+(new Date())+'] [' + level + '] ['+ message + ']';
 		mqttmod.send(broker, logtopic, msg, callback);
 		console.log('['+(new Date())+'] [' + level + '] ['+ message + ']');
